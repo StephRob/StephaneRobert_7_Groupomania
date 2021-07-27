@@ -50,6 +50,7 @@ Clonez ce repo.
 - exécutez cd Frontend/
 - exécutez `npm run serve`
 
+Puis se rendre sur: http://localhost:8080/
 ## Auteur
 
 Stéphane ROBERT, développeur web en formation chez [OpenClassrooms](https://openclassrooms.com/)
