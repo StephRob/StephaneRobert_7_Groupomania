@@ -6,8 +6,8 @@ Groupomania est une entreprise spécialisée dans la grande distribution qui sou
 
 ## Mission
 
-Réaliser le frontend 
-Réaliser le backend et l'API de l'application en respectant de sécurités
+- Réaliser le frontend 
+- Réaliser le backend et l'API de l'application en respectant de sécurités
 
 ### Exigences:
 
