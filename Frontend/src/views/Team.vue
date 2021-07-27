@@ -7,7 +7,7 @@
           <!-- Card team -->
           <v-card elevation="2" class="text-center">
             <!-- Avatar -->
-            <v-list-item-avatar size="100" rounded="true" class="mr-0" v-if="user.avatar !== null">
+            <v-list-item-avatar size="100" rounded="true" class="mr-0">
               <v-img v-if="user.avatar !== null" :src="user.avatar"></v-img>
               <v-img v-else src="../../public/images/profil/icon.png"></v-img>
             </v-list-item-avatar>

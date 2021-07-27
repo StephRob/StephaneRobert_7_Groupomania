@@ -48,7 +48,6 @@ export default new Vuex.Store({
         }
       })
       .then(response => {
-        console.log(response.data)
         context.commit('GET_USER', response.data)
       })
       .catch(error => console.log(error))
@@ -62,7 +61,6 @@ export default new Vuex.Store({
         }
       })
       .then(response => {
-        console.log(response.data)
         context.commit('GET_ALL_USERS', response.data)
       })
       .catch(error => console.error(error))
@@ -92,7 +90,6 @@ export default new Vuex.Store({
         }
       })
       .then(response => {
-        console.log(response.data)
         context.commit('GET_ALL_POSTS', response.data)
       })
       .catch(error => console.error(error))
@@ -106,7 +103,6 @@ export default new Vuex.Store({
         }
       })
       .then(response => {
-        console.log('myPosts', response.data)
         context.commit('GET_MY_POSTS', response.data)
       })
       .catch(error => console.error(error))

@@ -100,7 +100,6 @@ import { mapState, mapActions } from 'vuex'
           })
           .then(response => response.json())
           .then(post => {
-            console.log(post)
             if(post.error) {
               this.snackbarText = 'Echec du post'
               this.snackbarColor = 'red darken-4'
