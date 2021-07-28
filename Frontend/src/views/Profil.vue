@@ -135,8 +135,6 @@ import { mapState, mapActions } from 'vuex'
     }
   }
 
-  .profil-
-
   .back-to-top {
     position: fixed;
     bottom: 20px;
