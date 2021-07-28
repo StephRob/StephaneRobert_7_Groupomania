@@ -135,7 +135,7 @@ export default {
       const d = new Date(timestamp)
       let mounth = d.getMonth() + 1
       let hours = d.getHours()
-      let minutes = d.getHours()
+      let minutes = d.getMinutes()
       switch (mounth) {
         case 7: mounth = 'juillet'; break;
         case 8: mounth = 'août'; break;
