@@ -116,7 +116,6 @@ export default new Vuex.Store({
         }
       })
       .then(response => {
-        console.log(response.data)
         context.commit('GET_ALL_COMMENTS', response.data)
       })
       .catch(error => console.error(error))

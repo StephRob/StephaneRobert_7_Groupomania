@@ -15,7 +15,7 @@
             <v-card-title class="post-username">
               {{ post.user.firstname }} {{ post.user.lastname }} 
               <br> 
-              <v-card-subtitle class="datetime mb-0 pa-0 grey--text text--darken-2">{{ dateFormat(post.createdAt) }}</v-card-subtitle>
+              <v-card-subtitle class="datetime mb-0 pa-0 grey--text text--darken-2">{{ postDateFormat(post.createdAt) }}</v-card-subtitle>
             </v-card-title>
           <v-spacer></v-spacer>
           <!-- Option suppression  -->
@@ -75,12 +75,13 @@
                 </v-avatar>
                 <div class="mr-1">
                   <!-- Nom du propriétaire -->
-                  <v-card-subtitle v-if="comment.userId === userData.id" class="comment-are__username font-weight-medium pl-1 pt-2 pb-0 pr-3 grey--text text--darken-1">Moi</v-card-subtitle>
+                  <v-card-subtitle v-if="comment.userId === userData.id" class="comment-are__username font-weight-medium pl-1 pt-2 pb-0 pr-3 grey--text text--darken-1">Moi <span class="font-weight-light">{{ commentDateFormat(comment.createdAt) }}</span></v-card-subtitle>
                   <v-card-subtitle v-else class="comment-username font-weight-medium pl-1 pt-2 pb-0 pr-3 grey--text text--darken-1">
-                    {{ comment.user.firstname }} {{ comment.user.lastname }}
+                    {{ comment.user.firstname }} {{ comment.user.lastname }} <span class="font-weight-light">{{ commentDateFormat(comment.createdAt) }}</span>
                   </v-card-subtitle>
                   <!-- Text du commentaire -->
                   <v-card-text class="pa-1 pt-0 pb-2 pr-3 mb-0 black--text">{{ comment.comment }}</v-card-text>
+                  <!--<v-card-subtitle class="datetime mb-0 pa-0 grey--text text--darken-2">{{ commentDateFormat(comment.createdAt) }}</v-card-subtitle>-->
                 </div >
                 <!-- Option de suppression -->
                 <v-menu bottom left v-if="userData.isAdmin == true || comment.userId === userData.id">
@@ -131,7 +132,7 @@ export default {
   methods: {
     ...mapActions(['getAllComments', 'getAllPosts']),
 
-    dateFormat(timestamp) {
+    postDateFormat(timestamp) {
       const d = new Date(timestamp)
       let mounth = d.getMonth() + 1
       let hours = d.getHours()
@@ -153,6 +154,29 @@ export default {
       const date =`le ${d.getDate()} ${mounth} à ${hours}h${minutes}`
       return date
     },
+
+    commentDateFormat(timestamp) {
+      const d = new Date(timestamp)
+      let mounth = d.getMonth() + 1
+      let hours = d.getHours()
+      let minutes = d.getMinutes()
+
+      if(mounth < 10) {
+        mounth = '0' + mounth
+      }
+
+      if(hours < 10) {
+        hours = '0' + hours
+      }
+
+      if(minutes < 10) {
+        minutes = '0' + minutes
+      }
+      const date =`le ${d.getDate()}/${mounth} à ${hours}h${minutes}`
+      return date
+    },
+
+
 
     filterCommentsByPost(post) {
       return this.comments.filter(comment => comment.postId === post.id)

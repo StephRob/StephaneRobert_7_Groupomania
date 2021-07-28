@@ -51,7 +51,7 @@ exports.createComment = (req, res, next) => {
 exports.getAllComments = (req, res, next) => {
   // Recherche des commentaires
   models.Comment.findAll({
-    attributes: ['id', 'comment', 'postId', 'userId'],
+    attributes: ['id', 'comment', 'postId', 'userId', 'createdAt'],
     order: [['id', 'DESC']],
     include: [
       {
