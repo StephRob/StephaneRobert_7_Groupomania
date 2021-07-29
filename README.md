@@ -48,7 +48,7 @@ Clonez ce repo.
 #### Base de données
 À partir du dossier config:
 - Renomer le fichier `config-sample.json` en `config.json`
-- Remplir les champs avec vos propres informations:
+- Dans `config.json` remplir les champs avec vos propres informations:
    - "username": "",
    - "password": "",
    - "database": "",
@@ -57,8 +57,8 @@ Clonez ce repo.
    - exécutez: `sequelize db:create`
    - exécutez: `sequelize db:migrate`
 - Pour créer un administrateur: 
-   - créer un utilisateur ou utilisateur déjà créé
-   - utilisr la commande SQL : UPDATE users SET isAdmin = 1 WHERE id = `?`;
+   - créez un utilisateur ou utiliser un utilisateur déjà créé
+   - via mySQL tapez la commande : UPDATE users SET isAdmin = 1 WHERE id = `?`;
    - `?` = l'id de l'utilisateur à passer en tant qu'administrateur
 
 ### Frontend
