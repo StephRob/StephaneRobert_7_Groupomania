@@ -43,7 +43,20 @@ Clonez ce repo.
 ### Backend
 À partir du dossier du projet:
 - exécutez cd Backend/
-- exécutez `nodemon server` 
+- exécutez `nodemon server`
+
+#### Base de données
+À partir du dossier config:
+- Renomer le fichier `config-sample.json` en `config.json`
+- Remplir les champs avec vos propres informations:
+   - "username": "",
+   - "password": "",
+   - "database": "",
+   - "host": "localhost"
+- Ensuite dans la console toujours depuis Backend/ :
+   - exécutez: `sequelize db:create`
+   - exécutez: `sequelize db:migrate`
+
 
 ### Frontend
 À partir du dossier du projet:
