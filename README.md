@@ -56,7 +56,10 @@ Clonez ce repo.
 - Ensuite dans la console toujours depuis Backend/ :
    - exécutez: `sequelize db:create`
    - exécutez: `sequelize db:migrate`
-
+- Pour créer un administrateur: 
+   - créer un utilisateur ou utilisateur déjà créé
+   - utilisr la commande SQL : UPDATE users SET isAdmin = 1 WHERE id = `?`;
+   - `?` = l'id de l'utilisateur à passer en tant qu'administrateur
 
 ### Frontend
 À partir du dossier du projet:
